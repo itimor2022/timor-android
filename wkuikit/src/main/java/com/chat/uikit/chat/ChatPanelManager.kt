@@ -1022,7 +1022,7 @@ class ChatPanelManager(
         }
         // 监听机器人刷新菜单
         WKIM.getInstance().robotManager.addOnRefreshRobotMenu(iConversationContext.chatChannelInfo.channelID) {
-//            checkRobotMenu(iConversationContext)
+            checkRobotMenu(iConversationContext)
         }
 
     }

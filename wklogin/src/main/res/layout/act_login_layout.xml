@@ -245,10 +245,10 @@
             android:text="@string/version_desc"
             android:textColor="@color/colorDark"
             android:textSize="@dimen/font_size_18" />
-
+        <!-- 开启没有用，并不会修改预埋的api域名 -->
         <TextView
             android:id="@+id/baseUrlTv"
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/update_api"
