@@ -19,5 +19,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-/release
-*.apk
+/release/*
