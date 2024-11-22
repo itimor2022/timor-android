@@ -102,11 +102,9 @@ android {
         }
     }
 }
-
-static def releaseTime() {
-    return new Date().format("yyyyMMddHHmmss")
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd-HH-mm", TimeZone.getTimeZone("Asia/Shanghai"))
 }
-
 dependencies {
     api project(':wkbase')
     implementation project(path: ':wkuikit')
