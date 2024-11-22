@@ -65,6 +65,21 @@ android {
             signingConfig signingConfigs.release
         }
     }
+    // 打包 用来打包修改名字的 跟defaultConfig是同一级的
+    applicationVariants.all { variant ->
+        variant.outputs.all { output -> // 这里和2.0的不一样 2.0是each 3.0是all
+            def outputFile = output.outputFile
+            def fileName;
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                if (variant.buildType.name.equals('release')) {
+                    fileName = "pro_${releaseTime()}_${defaultConfig.versionName}_release.apk"
+                } else if (variant.buildType.name.equals('debug')) {
+                    fileName = "pro_${releaseTime()}_${defaultConfig.versionName}_debug.apk"
+                }
+                outputFileName = fileName // 这里和2.0不一样
+            }
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -85,6 +100,10 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+}
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd-HH-mm", TimeZone.getTimeZone("Asia/Shanghai"))
 }
 
 dependencies {
