@@ -209,7 +209,7 @@
                 android:layout_height="15dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:background="@color/colorLine" />
 
             <TextView
@@ -219,7 +219,7 @@
                 android:visibility="visible"
                 android:text="@string/forget_pwd"
                 android:textColor="@color/color999"
-                android:textSize="@dimen/font_size_13" />
+                android:textSize="@dimen/font_size_16" />
         </LinearLayout>
 
 
