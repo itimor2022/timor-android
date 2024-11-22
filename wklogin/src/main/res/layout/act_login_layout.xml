@@ -216,7 +216,7 @@
                 android:id="@+id/forgetPwdTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:text="@string/forget_pwd"
                 android:textColor="@color/color999"
                 android:textSize="@dimen/font_size_13" />
@@ -248,7 +248,7 @@
 
         <TextView
             android:id="@+id/baseUrlTv"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/update_api"

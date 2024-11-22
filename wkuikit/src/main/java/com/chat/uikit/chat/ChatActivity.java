@@ -484,7 +484,7 @@ public class ChatActivity extends SwipeBackActivity implements IConversationCont
                             }
                             List<PopupMenuItem> list = new ArrayList<>();
                             // 隐藏视频通话
-                            // list.add(new PopupMenuItem(getString(R.string.video_call), R.mipmap.chat_calls_video, () -> p2pCall(1)));
+                            list.add(new PopupMenuItem(getString(R.string.video_call), R.mipmap.chat_calls_video, () -> p2pCall(1)));
                             list.add(new PopupMenuItem(getString(R.string.audio_call), R.mipmap.chat_calls_voice, () -> p2pCall(0)));
                             WKDialogUtils.getInstance().showScreenPopup(view, list);
                         } else {
