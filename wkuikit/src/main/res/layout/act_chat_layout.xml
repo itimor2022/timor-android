@@ -139,13 +139,14 @@
                             android:layout_height="wrap_content"
                             android:padding="10dp">
 
+                            <!-- robot关闭机器人菜单-->
                             <LinearLayout
+                                android:visibility="gone"
                                 android:id="@+id/menuView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
-                                android:layout_marginEnd="10dp"
-                                android:visibility="gone">
+                                android:layout_marginEnd="10dp">
 
                                 <LinearLayout
                                     android:id="@+id/menuLayout"
