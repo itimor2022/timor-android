@@ -125,7 +125,8 @@ class ChatPanelManager(
     private var inlineQueryOffset: String = ""
     private var searchKey: String = ""
     private var username: String = ""
-    private val maxLength = 300
+    // 消息字数限制
+    private val maxLength = 30000
 
     private val menuView: View = parentView.findViewById(R.id.menuView)
     private val menuLayout: View = parentView.findViewById(R.id.menuLayout)

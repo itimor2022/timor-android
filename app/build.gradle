@@ -71,11 +71,7 @@ android {
             def outputFile = output.outputFile
             def fileName;
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                if (variant.buildType.name.equals('release')) {
-                    fileName = "pro_${releaseTime()}_${defaultConfig.versionName}_release.apk"
-                } else if (variant.buildType.name.equals('debug')) {
-                    fileName = "pro_${releaseTime()}_${defaultConfig.versionName}_debug.apk"
-                }
+                fileName = "jzl_v${defaultConfig.versionName}_${releaseTime()}_${output.baseName}.apk"
                 outputFileName = fileName // 这里和2.0不一样
             }
         }
@@ -102,8 +98,8 @@ android {
     }
 }
 
-def releaseTime() {
-    return new Date().format("yyyy-MM-dd-HH-mm", TimeZone.getTimeZone("Asia/Shanghai"))
+static def releaseTime() {
+    return new Date().format("yyyyMMddHHmmss", TimeZone.getTimeZone("Asia/Shanghai"))
 }
 
 dependencies {
