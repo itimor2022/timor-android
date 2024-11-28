@@ -24,7 +24,7 @@ android {
     compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.jjyy.zy101"
+        applicationId "com.yyds.ym101"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -71,7 +71,7 @@ android {
             def outputFile = output.outputFile
             def fileName;
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                fileName = "jzl_v${defaultConfig.versionName}_${releaseTime()}_${output.baseName}.apk"
+                fileName = "ym_v${defaultConfig.versionName}_${releaseTime()}_${output.baseName}.apk"
                 outputFileName = fileName // 这里和2.0不一样
             }
         }
