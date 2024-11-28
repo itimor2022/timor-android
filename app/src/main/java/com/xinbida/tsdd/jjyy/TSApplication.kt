@@ -1,4 +1,4 @@
-package com.jjyy.zy101
+package com.yyds.ym101
 
 import android.app.ActivityManager
 import android.app.Notification
@@ -113,7 +113,7 @@ class TSApplication : MultiDexApplication() {
     }
 
     private fun getAppPackageName(): String {
-        return "com.jjyy.zy101"
+        return "com.yyds.ym101"
     }
 
     private fun getProcessName(cxt: Context, pid: Int): String? {
@@ -129,7 +129,7 @@ class TSApplication : MultiDexApplication() {
 
 
     private fun addAppFrontBack() {
-        val helper = AppFrontBackHelper()
+        val helper = com.yyds.ym101.AppFrontBackHelper()
         helper.register(this, object : AppFrontBackHelper.OnAppStatusListener {
             override fun onFront() {
                 if (!TextUtils.isEmpty(WKConfig.getInstance().token)) {

@@ -20,7 +20,7 @@ android {
              keyPassword '111111'
         }
     }
-    namespace 'com.jjyy.zy101'
+    namespace 'com.yyds.ym101'
     compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {

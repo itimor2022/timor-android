@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.jjyy.zy101",
+  "applicationId": "com.yyds.ym101",
   "variantName": "release",
   "elements": [
     {
@@ -13,7 +13,7 @@
       "attributes": [],
       "versionCode": 1,
       "versionName": "1.0.1",
-      "outputFile": "jzl_v1.0.1_20241128162355_release.apk"
+      "outputFile": "ym_v1.0.1_20241128174010_release.apk"
     }
   ],
   "elementType": "File",
@@ -22,14 +22,14 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/jzl_v1.0.1_20241128162355_release.dm"
+        "baselineProfiles/1/ym_v1.0.1_20241128174010_release.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/jzl_v1.0.1_20241128162355_release.dm"
+        "baselineProfiles/0/ym_v1.0.1_20241128174010_release.dm"
       ]
     }
   ],
