@@ -105,7 +105,7 @@ class TSApplication : MultiDexApplication() {
     private fun initApi() {
         var apiURL = WKSharedPreferencesUtil.getInstance().getSP("api_base_url")
         if (TextUtils.isEmpty(apiURL)) {
-            apiURL = "http://18.162.84.153:18090"
+            apiURL = "http://td-api.daluje.cyou"
             WKApiConfig.initBaseURL(apiURL)
         } else {
             WKApiConfig.initBaseURLIncludeIP(apiURL)
@@ -127,9 +127,8 @@ class TSApplication : MultiDexApplication() {
         return null
     }
 
-
     private fun addAppFrontBack() {
-        val helper = com.yyds.ym101.AppFrontBackHelper()
+        val helper = AppFrontBackHelper()
         helper.register(this, object : AppFrontBackHelper.OnAppStatusListener {
             override fun onFront() {
                 if (!TextUtils.isEmpty(WKConfig.getInstance().token)) {
