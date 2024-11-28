@@ -93,7 +93,7 @@ class TSApplication : MultiDexApplication() {
 
     private fun getList(): ArrayList<PeerConnection.IceServer> {
         val iceServer = PeerConnection.IceServer.builder(
-            "turn:43.198.99.150:3478?transport=tcp"
+            "turn:18.162.84.153:3478?transport=tcp"
         ).setUsername("user1").setPassword(
             "password1"
         ).createIceServer()
@@ -105,7 +105,7 @@ class TSApplication : MultiDexApplication() {
     private fun initApi() {
         var apiURL = WKSharedPreferencesUtil.getInstance().getSP("api_base_url")
         if (TextUtils.isEmpty(apiURL)) {
-            apiURL = "https://154.202.156.171:701"
+            apiURL = "http://18.162.84.153:18090"
             WKApiConfig.initBaseURL(apiURL)
         } else {
             WKApiConfig.initBaseURLIncludeIP(apiURL)
