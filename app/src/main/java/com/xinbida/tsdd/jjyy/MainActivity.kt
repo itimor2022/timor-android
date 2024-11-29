@@ -1,4 +1,4 @@
-package com.yyds.ym101
+package com.bmw.x7
 
 import android.content.Intent
 import android.text.Spannable
@@ -17,7 +17,7 @@ import com.chat.base.utils.WKDialogUtils
 import com.chat.login.ui.PerfectUserInfoActivity
 import com.chat.login.ui.WKLoginActivity
 import com.chat.uikit.TabActivity
-import com.yyds.ym101.databinding.ActivityMainBinding
+import com.bmw.x7.databinding.ActivityMainBinding
 import com.xinbida.wukongim.WKIM
 
 class MainActivity : WKBaseActivity<ActivityMainBinding>() {

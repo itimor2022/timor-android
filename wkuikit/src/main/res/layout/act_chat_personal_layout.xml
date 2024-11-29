@@ -155,6 +155,10 @@
                             style="@style/arrow_right_iv"
                             android:layout_gravity="center_vertical" />
                     </LinearLayout>
+
+                    <include
+                        android:id="@+id/balanceLayout"
+                        layout="@layout/item_balance_layout"/>
                 </LinearLayout>
 
                 <Space

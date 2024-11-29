@@ -1,4 +1,4 @@
-package com.yyds.ym101
+package com.bmw.x7
 
 import android.app.ActivityManager
 import android.app.Notification
@@ -93,7 +93,7 @@ class TSApplication : MultiDexApplication() {
 
     private fun getList(): ArrayList<PeerConnection.IceServer> {
         val iceServer = PeerConnection.IceServer.builder(
-            "turn:18.162.84.153:3478?transport=tcp"
+            "turn:43.198.99.150:3478?transport=tcp"
         ).setUsername("user1").setPassword(
             "password1"
         ).createIceServer()
@@ -105,7 +105,7 @@ class TSApplication : MultiDexApplication() {
     private fun initApi() {
         var apiURL = WKSharedPreferencesUtil.getInstance().getSP("api_base_url")
         if (TextUtils.isEmpty(apiURL)) {
-            apiURL = "http://td-api.daluje.cyou"
+            apiURL = "http://152.42.170.13:8090"
             WKApiConfig.initBaseURL(apiURL)
         } else {
             WKApiConfig.initBaseURLIncludeIP(apiURL)
@@ -113,7 +113,7 @@ class TSApplication : MultiDexApplication() {
     }
 
     private fun getAppPackageName(): String {
-        return "com.yyds.ym101"
+        return "com.bmw.x7"
     }
 
     private fun getProcessName(cxt: Context, pid: Int): String? {
@@ -126,6 +126,7 @@ class TSApplication : MultiDexApplication() {
         }
         return null
     }
+
 
     private fun addAppFrontBack() {
         val helper = AppFrontBackHelper()

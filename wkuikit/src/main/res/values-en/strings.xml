@@ -282,5 +282,11 @@
     <string name="tab_text_contacts">Contacts</string>
     <string name="tab_text_me">Me</string>
     <string name="invitation_sent">Invitation sent</string>
+    <string name="balance">Balance</string>
+    <string name="money_management">Money Management</string>
+    <string name="add_bank_card">Add Bank Card</string>
+    <string name="bank_management">Bank Management</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="amount_log">Transaction History</string>
 </resources>
 

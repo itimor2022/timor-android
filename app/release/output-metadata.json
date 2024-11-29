@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.yyds.ym101",
+  "applicationId": "com.bmw.x7",
   "variantName": "release",
   "elements": [
     {
@@ -13,7 +13,7 @@
       "attributes": [],
       "versionCode": 1,
       "versionName": "1.0.1",
-      "outputFile": "ym_v1.0.1_20241128203006_release.apk"
+      "outputFile": "jzl_v1.0.1_20241124114542_release.apk"
     }
   ],
   "elementType": "File",
@@ -22,14 +22,14 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/ym_v1.0.1_20241128203006_release.dm"
+        "baselineProfiles/1/jzl_v1.0.1_20241124114542_release.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/ym_v1.0.1_20241128203006_release.dm"
+        "baselineProfiles/0/jzl_v1.0.1_20241124114542_release.dm"
       ]
     }
   ],

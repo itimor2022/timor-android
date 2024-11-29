@@ -1,4 +1,4 @@
-package com.yyds.ym101
+package com.bmw.x7
 
 import org.junit.Test
 

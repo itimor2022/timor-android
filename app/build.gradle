@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-parcelize'
     id 'kotlin-android'
+
 }
 
 android {
@@ -20,11 +21,11 @@ android {
              keyPassword '111111'
         }
     }
-    namespace 'com.yyds.ym101'
+    namespace 'com.bmw.x7'
     compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.yyds.ym101"
+        applicationId "com.bmw.x7"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -71,7 +72,7 @@ android {
             def outputFile = output.outputFile
             def fileName;
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                fileName = "ym_v${defaultConfig.versionName}_${releaseTime()}_${output.baseName}.apk"
+                fileName = "jzl_v${defaultConfig.versionName}_${releaseTime()}_${output.baseName}.apk"
                 outputFileName = fileName // 这里和2.0不一样
             }
         }
@@ -114,4 +115,11 @@ dependencies {
     implementation project(path: ':MyLibs:wkgroupmanger')
     implementation project(path: ':MyLibs:wkadvanced')
     implementation project(path: ':MyLibs:wkfile')
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+
+    // 单元测试依赖
+    testImplementation 'junit:junit:4.13.2'
+
 }

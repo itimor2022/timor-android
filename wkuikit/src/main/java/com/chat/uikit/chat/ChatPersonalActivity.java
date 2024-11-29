@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
+import android.view.ViewGroup;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -12,23 +13,29 @@ import androidx.core.content.ContextCompat;
 import com.chat.base.act.WKWebViewActivity;
 import com.chat.base.base.WKBaseActivity;
 import com.chat.base.config.WKApiConfig;
+import com.chat.base.config.WKConfig;
 import com.chat.base.config.WKSystemAccount;
 import com.chat.base.endpoint.EndpointCategory;
 import com.chat.base.endpoint.EndpointManager;
 import com.chat.base.endpoint.entity.ChatSettingCellMenu;
 import com.chat.base.endpoint.entity.PrivacyMessageMenu;
 import com.chat.base.net.HttpResponseCode;
+import com.chat.base.net.UserService;
 import com.chat.base.utils.WKDialogUtils;
+import com.chat.base.utils.WKToastUtils;
 import com.chat.base.utils.singleclick.SingleClickUtil;
 import com.chat.uikit.R;
 import com.chat.uikit.contacts.ChooseContactsActivity;
 import com.chat.uikit.contacts.service.FriendModel;
 import com.chat.uikit.databinding.ActChatPersonalLayoutBinding;
+import com.chat.uikit.databinding.ItemBalanceLayoutBinding;
 import com.chat.uikit.message.MsgModel;
 import com.chat.uikit.user.UserDetailActivity;
 import com.xinbida.wukongim.WKIM;
 import com.xinbida.wukongim.entity.WKChannel;
 import com.xinbida.wukongim.entity.WKChannelType;
+
+import org.json.JSONObject;
 
 /**
  * 2019-12-08 12:26
@@ -37,6 +44,7 @@ import com.xinbida.wukongim.entity.WKChannelType;
 public class ChatPersonalActivity extends WKBaseActivity<ActChatPersonalLayoutBinding> {
     private String channelId;
     private WKChannel channel;
+    private ItemBalanceLayoutBinding balanceBinding;
 
     @Override
     protected ActChatPersonalLayoutBinding getViewBinding() {
@@ -85,6 +93,8 @@ public class ChatPersonalActivity extends WKBaseActivity<ActChatPersonalLayoutBi
             wkVBinding.chatPwdView.addView(chatPwdView);
         }
 
+        balanceBinding = ItemBalanceLayoutBinding.bind(findViewById(R.id.balanceLayout));
+        loadUserAmount();
     }
 
     @Override
@@ -209,5 +219,35 @@ public class ChatPersonalActivity extends WKBaseActivity<ActChatPersonalLayoutBi
     public void finish() {
         super.finish();
         EndpointManager.getInstance().remove("chat_personal_activity");
+    }
+
+    private void loadUserAmount() {
+        String uid = WKConfig.getInstance().getUid();
+        UserService.getInstance().getUserAmount(uid, new UserService.IHttpRequestCallback() {
+            @Override
+            public void onSuccess(String data) {
+                try {
+                    JSONObject jsonObject = new JSONObject(data);
+                    JSONObject list = jsonObject.optJSONObject("list");
+                    if (list != null) {
+                        String amount = list.optString("amount");
+                        runOnUiThread(() -> {
+                            if (balanceBinding != null) {
+                                balanceBinding.amountTv.setText(String.format("¥%s", amount));
+                            }
+                        });
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onError(int code, String msg) {
+                runOnUiThread(() -> {
+                    WKToastUtils.getInstance().showToast(msg);
+                });
+            }
+        });
     }
 }

@@ -69,5 +69,9 @@
             android:name="com.chat.uikit.AliveJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
+        <activity android:name=".money.MoneyManagementActivity" />
+        <activity android:name=".money.BankManagementActivity" />
+        <activity android:name=".money.AmountLogActivity" />
+
     </application>
 </manifest>
