@@ -72,9 +72,9 @@ android {
             def fileName;
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
                 if (variant.buildType.name.equals('release')) {
-                    fileName = "mysafe_${releaseTime()}_${defaultConfig.versionName}_release.apk"
+                    fileName = "zy_${releaseTime()}_${defaultConfig.versionName}_release.apk"
                 } else if (variant.buildType.name.equals('debug')) {
-                    fileName = "mysafe_${releaseTime()}_${defaultConfig.versionName}_debug.apk"
+                    fileName = "zy_${releaseTime()}_${defaultConfig.versionName}_debug.apk"
                 }
                 outputFileName = fileName // 这里和2.0不一样
             }
