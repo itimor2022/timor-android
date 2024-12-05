@@ -117,4 +117,7 @@ dependencies {
     implementation project(path: ':MyLibs:wkgroupmanger')
     implementation project(path: ':MyLibs:wkadvanced')
     implementation project(path: ':MyLibs:wkfile')
+    implementation project(path: ':MyLibs:wkvideo')
+
+    implementation 'com.github.CarGuo.GSYVideoPlayer:gsyvideoplayer:v10.0.0'
 }

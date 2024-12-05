@@ -216,7 +216,7 @@
                 android:id="@+id/forgetPwdTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:text="@string/forget_pwd"
                 android:textColor="@color/color999"
                 android:textSize="@dimen/font_size_16" />

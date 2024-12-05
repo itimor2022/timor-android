@@ -38,6 +38,7 @@ import com.chat.groupmanage.WKGroupManageApplication
 import com.chat.imgeditor.WKImageEditorApplication
 import com.chat.advanced.WKAdvancedApplication
 import com.chat.file.WKFileApplication
+import com.chat.video.WKVideoApplication
 import com.chat.rtc.WKUIRTCApplication
 import org.webrtc.PeerConnection
 
@@ -82,6 +83,7 @@ class TSApplication : MultiDexApplication() {
         WKScanApplication.getInstance().init(this) // 扫一扫
         WKAdvancedApplication.instance.init() // 旗舰模块
         WKFileApplication.getInstance().init(this) // 文件模块
+        WKVideoApplication.getInstance().init(this) // 小视频模块
         WKGroupManageApplication.getInstance().init() // 群管理模块
         WKUIKitApplication.getInstance().init(this)
         WKUIRTCApplication.init(getList()) // 音视频
